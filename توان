@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the base number (m): ");
+        int m = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter the exponent number (n): ");
+        int n = int.Parse(Console.ReadLine());
+
+        double result = Math.Pow(m, n);
+        
+        Console.WriteLine($"The result of {m} raised to the power of {n} is: {result}");
+    }
+}
