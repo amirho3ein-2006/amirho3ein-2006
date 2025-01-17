@@ -1,0 +1,35 @@
+using System;
+
+public class AnagramChecker
+{
+    public static bool AreAnagrams(string str1, string str2)
+    {
+        if (str1.Length != str2.Length)
+            return false;
+
+        int[] charCount = new int[256];
+
+        for (int i = 0; i < str1.Length; i++)
+        {
+            charCount[str1[i]]++;
+            charCount[str2[i]]--;
+        }
+
+        foreach (int count in charCount)
+        {
+            if (count != 0)
+                return false;
+        }
+
+        return true;
+    }
+
+    public static void Main()
+    {
+        string str1 = "listen";
+        string str2 = "silent";
+
+        bool result = AreAnagrams(str1, str2);
+        Console.WriteLine(result ? "The strings are anagrams." : "The strings are not anagrams.");
+    }
+}
