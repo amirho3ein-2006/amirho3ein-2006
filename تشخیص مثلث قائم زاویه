@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the first side length: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter the second side length: ");
+        int b = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter the third side length: ");
+        int c = int.Parse(Console.ReadLine());
+
+        if (IsRightAngleTriangle(a, b, c))
+        {
+            Console.WriteLine("The triangle is a right triangle.");
+        }
+        else
+        {
+            Console.WriteLine("The triangle is not a right triangle.");
+        }
+    }
+
+    static bool IsRightAngleTriangle(int a, int b, int c)
+    {
+        int[] sides = { a, b, c };
+        Array.Sort(sides);
+
+        return sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2];
+    }
+}
